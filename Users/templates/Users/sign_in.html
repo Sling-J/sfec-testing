@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block links %}
+<link rel="stylesheet" href="{% static 'css/sign-in.css' %}">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+{% endblock %}
+{% block title %}Авторизация{% endblock title %}
+
+{% block content %}
+	<div class="login-page">
+      <form class="login-form-box" method="POST">
+			<div class="login-form">
+				<h2>Авторизация</h2>
+				{% csrf_token %}
+				<div>
+					{{ form }}
+				</div>
+				
+				<button type="submit">Sign in</button>
+				
+				<a href="{% url 'home_url' %}">Вернутся на главную страницу</a>
+			</div>
+      </form>
+	</div>
+      
+  <script>
+	  const inputLogin = document.getElementsByTagName('input')[1];
+	  const inputPassword = document.getElementsByTagName('input')[2];
+
+	  inputLogin.placeholder = 'Имя пользователя';
+	  inputPassword.placeholder = 'Пароль';
+  </script>
+{% endblock content %}

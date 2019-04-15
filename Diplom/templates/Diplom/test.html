@@ -1,0 +1,327 @@
+{% extends 'base.html' %}
+{% block content %}
+   <div class="test-wrapper">
+		<div class="test-title-top">
+			<div class="test-logo">
+				<a href="#">
+					<img src="/media/images/logo.png" alt="test">
+				</a>
+			</div>
+
+			<div class="test-title-top-text">
+				<p>
+					ШҚО Білім басқармасы 
+					«Р.С. Байсеитов атындағы Семей қаржы экономикалық
+					Колледжі» КМҚК						
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="test-header">
+		<div class="test-wrapper">
+			<div class="test-title">
+				<h1>
+					Кіріспе психологиялық-
+					педагогикалық диагностика
+					бойынша тесттер		
+				</h1>
+			</div>
+
+			<div class="test-cord">
+				<p>Семей қаласы.</p>
+			</div>
+		</div>
+   </div>
+   
+   <div class="test-section">
+      <div class="test-wrapper">
+         <form method="POST">
+            {% csrf_token %}
+            {% if messages %}
+               {% for mess in messages %}
+                  <div class="alert alert-success">
+                     {{ mess }}
+                  </div>
+               {% endfor %}
+            {% endif %}
+            
+            <div class="test-box">
+               <div class="test-box-item it-1">
+                  <p class="test-item-question">{{ test1 }}</p>
+                  <!-- <div class="label-box">
+                     {% for variant in test1.first_test_variants.all %}
+                        <label>
+                           {{ variant.variant }}
+                           <input type="radio" value="{{ variant.id }}" name="T1">
+                        </label>
+                     {% endfor %}
+                  </div> -->
+                        
+                  <div class="answers-box">
+                     <p>
+                        1)
+                        <label>
+                           <input type="radio" value="{{ variant.id }}" name="it-1-1">
+                           А
+                        </label>
+                        <label>
+                           <input type="radio" value="{{ variant.id }}" name="it-1-1">
+                           Б
+                        </label>
+                        <label>
+                           <input type="radio" value="{{ variant.id }}" name="it-1-1">
+                           В
+                        </label>
+                        <label>
+                           <input type="radio" value="{{ variant.id }}" name="it-1-1">
+                           Г
+                        </label>
+                     </p>
+                     <p>
+                        2)
+                        <label>
+                           <input type="radio" value="{{ variant.id }}" name="it-1-2">
+                           А
+                        </label>
+                        <label>
+                           <input type="radio" value="{{ variant.id }}" name="it-1-2">
+                           Б
+                        </label>
+                        <label>
+                           <input type="radio" value="{{ variant.id }}" name="it-1-2">
+                           В
+                        </label>
+                        <label>
+                           <input type="radio" value="{{ variant.id }}" name="it-1-2">
+                           Г
+                        </label>
+                     </p>
+                     <p>
+                        3)
+                        <label>
+                           <input type="radio" value="{{ variant.id }}" name="it-1-3">
+                           А
+                        </label>
+                        <label>
+                           <input type="radio" value="{{ variant.id }}" name="it-1-3">
+                           Б
+                        </label>
+                        <label>
+                           <input type="radio" value="{{ variant.id }}" name="it-1-3">
+                           В
+                        </label>
+                        <label>
+                           <input type="radio" value="{{ variant.id }}" name="it-1-3">
+                           Г
+                        </label>
+                     </p>
+                     <p>
+                        4)
+                        <label>
+                           <input type="radio" value="{{ variant.id }}" name="it-1-4">
+                           А
+                        </label>
+                        <label>
+                           <input type="radio" value="{{ variant.id }}" name="it-1-4">
+                           Б
+                        </label>
+                        <label>
+                           <input type="radio" value="{{ variant.id }}" name="it-1-4">
+                           В
+                        </label>
+                        <label>
+                           <input type="radio" value="{{ variant.id }}" name="it-1-4">
+                           Г
+                        </label>
+                     </p>
+                     <p>
+                        5)
+                        <label>
+                           <input type="radio" value="{{ variant.id }}" name="it-1-5">
+                           А
+                        </label>
+                        <label>
+                           <input type="radio" value="{{ variant.id }}" name="it-1-5">
+                           Б
+                        </label>
+                        <label>
+                           <input type="radio" value="{{ variant.id }}" name="it-1-5">
+                           В
+                        </label>
+                        <label>
+                           <input type="radio" value="{{ variant.id }}" name="it-1-5">
+                           Г
+                        </label>
+                     </p>
+                     <p>
+                        6)
+                        <label>
+                           <input type="radio" value="{{ variant.id }}" name="it-1-6">
+                           А
+                        </label>
+                        <label>
+                           <input type="radio" value="{{ variant.id }}" name="it-1-6">
+                           Б
+                        </label>
+                        <label>
+                           <input type="radio" value="{{ variant.id }}" name="it-1-6">
+                           В
+                        </label>
+                        <label>
+                           <input type="radio" value="{{ variant.id }}" name="it-1-6">
+                           Г
+                        </label>
+                     </p>
+                     <p>
+                        7)
+                        <label>
+                           <input type="radio" value="{{ variant.id }}" name="it-1-7">
+                           А
+                        </label>
+                        <label>
+                           <input type="radio" value="{{ variant.id }}" name="it-1-7">
+                           Б
+                        </label>
+                        <label>
+                           <input type="radio" value="{{ variant.id }}" name="it-1-7">
+                           В
+                        </label>
+                        <label>
+                           <input type="radio" value="{{ variant.id }}" name="it-1-7">
+                           Г
+                        </label>
+                     </p>
+                  </div>
+
+                  <div class="test-item-img">
+                     <img class="custom-width-img" src="/media/images/testing-1.png" alt="testing">
+                  </div>
+               </div>
+
+               <div class="test-box-item it-2">
+                  <p class="test-item-question">{{ test2 }}</p>
+                     <textarea class="remember-field" placeholder="Мәтінді енгізініз" name="T2"></textarea>
+               </div>
+
+               <div class="test-box-item it-3">
+                  <p class="test-item-question">{{ test3 }}</p>
+
+                  <button id="it-3-btn" type="button">Таймер</button>
+
+                  <span class="it-3-timer"></span>
+                  
+                  <div class="test-item-img it-3-question">
+                     <img src="/media/images/testing-2-q.png" alt="testing">
+                  </div>
+
+                  <div class="it-3-visibility">
+                     <div class="label-box">
+                        <label>
+                           <input type="radio" name="it3">
+                           1, 2, 5, 7, 8
+                        </label>
+                        <label>
+                           <input type="radio" name="it3">
+                           10, 19, 4, 18, 8
+                        </label>
+                        <label>
+                           <input type="radio" name="it3">
+                           1, 2, 5, 7, 8
+                        </label>
+                        <label>
+                           <input type="radio" name="it3">
+                           1, 2, 5, 7, 8
+                        </label>
+                     </div>
+
+                     <div class="test-item-img it-3-answer">
+                        <img src="/media/images/testing-2.png" alt="testing">
+                     </div>
+                  </div>
+                  
+                  <!-- <textarea style="margin-top: 20px" class="remember-field" placeholder="Мәтінді енгізініз" name="T3"></textarea> -->
+               </div>
+
+               <div class="test-box-item it-4">
+                  <p class="test-item-question">{{ test4 }}</p>
+                  {% for question in test4.questions.all %}
+                     <p>{{ question.text }}<br> {{ question.hint }} - 
+                        {% for variant in question.variants.all  %}
+                           <label>
+                              {{ variant.text }}
+                              <input type="radio" value="{{ variant.id }}" name="variants-{{ question.id }}">
+                           </label>
+                        {% endfor %}
+                     </p>
+                  {% endfor %}
+               </div>
+
+               <div class="test-box-item it-5">
+                  <p class="test-item-question">{{ test5 }}</p>
+                  <textarea class="remember-field" placeholder="Мәтінді енгізініз" name="T5"></textarea>
+               </div>
+
+               <div class="test-box-item it-6">
+                  <p class="test-item-question">{{ test6 }}</p>
+                  <div class="test-numbers">
+                     <div>
+                        {% for question in test6.number_questions.all %}
+                           <p>
+                              {{ question.text }} <input class="math-answer" type="number" name="answer_number_t6">
+                           </p>
+                        {% endfor %}
+                     </div>
+                  </div>
+               </div>
+
+               <div class="test-box-item it-7">
+                  <p class="test-item-question">{{ test7 }}</p>
+                  <div class="test-item-img">
+                     <img src="/media/images/testing-3.png" alt="testing">
+                  </div>
+                  
+                  <div class="label-box">
+                     <label>
+                        <input type="radio" name="it7">
+                        1, 2, 5, 7, 8
+                     </label>
+                     <label>
+                        <input type="radio" name="it7">
+                        10, 19, 4, 18, 8
+                     </label>
+                     <label>
+                        <input type="radio" name="it7">
+                        1, 2, 5, 7, 8
+                     </label>
+                     <label>
+                        <input type="radio" name="it7">
+                        1, 2, 5, 7, 8
+                     </label>
+                  </div>
+
+                  <!-- <textarea class="custom-heigth-textarea remember-field" placeholder="Мәтінді енгізініз" name="T7"></textarea> -->
+               </div>
+
+               <div class="test-box-item it-8">
+                  <p class="test-item-question">{{ test8 }}</p>
+                  <div class="test-numbers">
+                     <div>
+                        {% for question in test8.number_questions.all %}
+                           <p>
+                              {{ question.text }} <input class="math-answer" type="number" name="answer_number_t8">
+                           </p>
+                        {% endfor %}
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="send-btn-box">
+               <button class="send-btn" type="submit">Тестты аяқтау</button>
+            </div>
+         </form>
+      </div>
+   </div>
+
+{% endblock content %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+   <div class="select-mate-box">
+      <form method="POST">
+         {% csrf_token %}
+         <h3>Выберите студента</h3>
+
+         <button class="send-form-btn" type="submit">Выбрать</button>
+         
+         <div class="dropdown">
+            <div class="select">
+               <span>Студент</span>
+               <i class="fa fa-chevron-left"></i>
+            </div>
+            <input type="hidden" name="gender">
+            <ul class="dropdown-menu">
+               {% for student in students %}
+               {% csrf_token %}
+                  <li>
+                     <label>
+                        {{ student }}
+                        <input type="radio" value="{{ student.id }}" name="student">
+                     </label>
+                  </li>
+               {% endfor %}
+            </ul>
+         </div>
+      </form>
+   </div>
+{% endblock content %}

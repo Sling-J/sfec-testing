@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}{% endblock title %}
+
+{% block content %}
+<div class="select-mate-box">
+   <h3>Выберите группу</h3>
+
+   <div class="dropdown">
+      <div class="select">
+         <span>Группа</span>
+         <i class="fa fa-chevron-left"></i>
+      </div>
+      <ul class="dropdown-menu">
+         {% for group in groups %}
+            <li>
+               <a href="{{ group.get_absolute_url }}">{{ group.name }}</a>
+            </li>
+            <li>
+               <a href="{{ group.get_absolute_url }}">{{ group.name }}</a>
+            </li>
+            <li>
+               <a href="{{ group.get_absolute_url }}">{{ group.name }}</a>
+            </li>
+            <li>
+               <a href="{{ group.get_absolute_url }}">{{ group.name }}</a>
+            </li>
+         {% endfor %}
+      </ul>
+   </div>
+</div>
+{% endblock content %}
