@@ -1,5 +1,17 @@
 from django.shortcuts import render, redirect
-from .models import Student, Group, Test, QuestionRadio, VariantRadio, TextQuestion, First_test_variants, AnswerTest6, AnswerTest8
+from .models import (
+   Student, 
+   Group, 
+   Test, 
+   QuestionRadio, 
+   VariantRadio, 
+   TextQuestion, 
+   First_test_variants, 
+   AnswerTest6, 
+   AnswerTest8,
+   Third_test_variants,
+   Seventh_test_variants
+)
 from django.contrib import messages
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
@@ -22,9 +34,12 @@ def students(request, slug):
    students = Student.objects.filter(group=group, passed=False)
 
    if request.method == 'POST':
-     student_id = request.POST['student']
-     request.session['student_id'] = student_id
-     return redirect('test_url')
+      try:
+         student_id = request.POST['student']
+         request.session['student_id'] = student_id
+         return redirect('test_url')
+      except:
+         return redirect('groups_url')
    
    context = {
      'students':students,
@@ -50,24 +65,26 @@ def test(request):
    if request.method == 'POST':
       try:
          #           TEST 1
-         variant_id = request.POST.get('T1')
-         variant = First_test_variants.objects.get(id=variant_id)
-         variant.owner.add(student)
+         for question in test1.questions.all():
+            variantR_id = request.POST.get('first_test_variant-{}'.format(question.id))
+            variantR = First_test_variants.objects.get(id=variantR_id)
+            variantR.owner.add(student)
 
          #           TEST 2 
          answer = request.POST.get('T2')
          TextQuestion.objects.create(owner=student, test=test2, answer=answer)
 
          #           TEST 3
-         answer = request.POST.get('T3')
-         TextQuestion.objects.create(owner=student, test=test3, answer=answer)
+         variant_id = request.POST.get('T3')
+         variant = Third_test_variants.objects.get(id=variant_id)
+         variant.owner.add(student)
 
 
          #           TEST 4
          for question in test4.questions.all():
             variantR_id = request.POST.get('variants-{}'.format(question.id))
             variantR = VariantRadio.objects.get(id=variantR_id)
-            student.answer_of_TEST4.add(variantR)
+            variantR.owner.add(student)
 
          #           TEST 5
          answer = request.POST.get('T5')
@@ -79,8 +96,9 @@ def test(request):
             AnswerTest6.objects.create(owner=student, answer=answer)
 
          #           TEST 7
-         answer = request.POST.get('T7')
-         TextQuestion.objects.create(owner=student, test=test7, answer=answer)
+         variant_id = request.POST.get('T7')
+         variant = Seventh_test_variants.objects.get(id=variant_id)
+         variant.owner.add(student)
 
          #         TEST 8
          answers = request.POST.getlist('answer_number_t8')
@@ -111,8 +129,12 @@ def test(request):
 
 @login_required()
 def answers(request):
-   students = Student.objects.all()
+   groups = Group.objects.all()
+   test6 = Test.objects.get(number=6)
+   test8 = Test.objects.get(number=8)
    context = {
-      'students': students
+      'groups': groups,
+      'test6': test6,
+      'test8': test8,
    }
    return render(request, 'Diplom/answers.html', context)

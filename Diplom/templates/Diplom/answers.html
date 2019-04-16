@@ -7,61 +7,94 @@
    <title>Document</title>
 </head>
 <body>
-   {% for student in students %}
-      <div style="padding-bottom: 100px; border: 1px solid black;"> 
-         <p>{{ student.full_name }}</p>
-         <p>
-            <h4>Test 1</h4>
-            {% for answer in student.first_test_answer.all %}
-               <ul>
-                  <li>{{ answer }}</li>
-               </ul>
-            {% empty %}
-               Пока не ответил
-            {% endfor %}            
-         </p>
-         <p>
-            <h4>Test 2, 3, 5, 7</h4>
-            {% for answer in student.TextAnswers.all %}
-               <ul>
-                  <li>{{ answer }}</li>
-               </ul>
-            {% empty %}
-               Пока не ответил
-            {% endfor %}            
-         </p>
-         <p>
-            <h4>Test 4</h4>
-            {% for answer in student.answer_of_TEST4.all %}
-               <ul>
-                  <li>{{ answer }}</li>
-               </ul>
-            {% empty %}
-               Пока не ответил
-            {% endfor %}            
-         </p>
+   {% for group in groups %}
+      {{ group }}
+      {% for student in group.students.all %}
+         <div style="padding-bottom: 100px; border: 1px solid black;"> 
+            <p>{{ student.full_name }}</p>
+            <p>
+               <h4>Test 1</h4>
+               {% for answer in student.answer_of_TEST1.all %}
+                  <ul>
+                     <li>{{ answer }}</li> - Правильный ответ {{ answer.correct_answer }}
+                  </ul>
+               {% empty %}
+                  Пока не ответил
+               {% endfor %}              
+            </p>
+            <p>
+               <h4>Test 2, 5</h4>
+               {% for answer in student.TextAnswers.all %}
+                  <ul>
+                     <li>{{ answer }}</li>
+                  </ul>
+               {% empty %}
+                  Пока не ответил
+               {% endfor %}            
+            </p>
+            <p>
+               <h4>Test 3</h4>
+               {% for answer in student.third_test_variant.all %}
+                  <ul>
+                     <li>{{ answer }}</li> - Правильный ответ: {{ answer.correct_answer }}
+                  </ul>
+               {% empty %}
+                  Пока не ответил
+               {% endfor %}              
+            </p>
+            <p>
+               <h4>Test 4</h4>
+               {% for answer in student.answer_of_TEST4.all %}
+                  <ul>
+                     <li>{{ answer }}</li> - Правильный ответ: {{ answer.correct_answer }}
+                  </ul>
+               {% empty %}
+                  Пока не ответил
+               {% endfor %}            
+            </p>
 
-         <p>
-            <h4>Test 6</h4>
-            <ol>
-            {% for answer in student.Test6Answers.all %}
-               <li>{{ answer }}</li>
-            {% empty %}
-               Пока не ответил
-            {% endfor %} 
-            </ol>           
-         </p>
-         <p>
-            <h4>Test 8</h4>
-            <ol>
-            {% for answer in student.Test8Answers.all %}
-               <li>{{ answer }}</li>
-            {% empty %}
-               Пока не ответил
-            {% endfor %}   
-            </ol>         
-         </p>
-      </div>
+            <p>
+               <h4>Test 6</h4>
+               <ol>
+                  {% for answer in student.Test6Answers.all %}
+                     <li>{{ answer }}</li>
+                  {% empty %}
+                     Пока не ответил
+                  {% endfor %} 
+               </ol> 
+               <ol>
+                  {% for question in test6.number_questions.all %}
+                        <li>Правильныq ответ: {{ question.correct_answer }}</li>
+                  {% endfor %}  
+               </ol>        
+            </p>
+            <p>
+               <h4>Test 7</h4>
+               {% for answer in student.seventh_test_variant.all %}
+                  <ul>
+                     <li>{{ answer }}</li> - Правильный ответ: {{ answer.correct_answer }}
+                  </ul>
+               {% empty %}
+                  Пока не ответил
+               {% endfor %}              
+            </p>
+            <p>
+               <h4>Test 8</h4>
+               <ol>
+                  {% for answer in student.Test8Answers.all %}
+                     <li>{{ answer }}</li>
+                  {% empty %}
+                     Пока не ответил
+                  {% endfor %}   
+               </ol>        
+               <ol>
+                  {% for question in test8.number_questions.all %}
+                        <li>Правильныq ответ: {{ question.correct_answer }}</li>
+                  {% endfor %}  
+               </ol>    
+            </p>
+         </div>
+      {% endfor %}
    {% endfor %}
 </body>
 </html>

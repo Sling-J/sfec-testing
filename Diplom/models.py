@@ -25,20 +25,10 @@ class Group(models.Model):
 class QuestionRadio(models.Model):
    test = models.ForeignKey(Test, on_delete=models.CASCADE, related_name='questions', blank=True)
    text = models.CharField(max_length=200)
-   hint = models.CharField(max_length=200)
+   hint = models.CharField(max_length=200, blank=True)
 
    def __str__(self):
       return self.text
-
-
-class VariantRadio(models.Model):
-   text = models.CharField(max_length=200)
-   question = models.ForeignKey(QuestionRadio, on_delete=models.CASCADE, related_name='variants')
-
-
-   def __str__(self):
-      return 'Variant of {}. Variant - {}'.format(self.question, self.text)
-
 
 
 
@@ -46,6 +36,7 @@ class VariantRadio(models.Model):
 class NumberQuestion(models.Model):
    test = models.ForeignKey(Test, on_delete=models.CASCADE, related_name='number_questions')
    text = models.CharField(max_length=200)
+   correct_answer = models.CharField(max_length=200, blank=True)
 
    def __str__(self):
       return self.text
@@ -55,21 +46,20 @@ class NumberQuestion(models.Model):
 class Student(models.Model):
    full_name = models.CharField(max_length=100)
    group = models.ForeignKey(Group, on_delete=models.CASCADE, related_name='students')
-   answer_of_TEST4 =  models.ManyToManyField(VariantRadio, related_name="students", blank=True)
    passed = models.BooleanField(default=False)
 
    
    def __str__(self):
       return self.full_name
 
-#              TEST 2, TEST 3, TEST 5, TEST 7 
+#              TEST 2, TEST 5
 class TextQuestion(models.Model):
    owner = models.ForeignKey(Student, on_delete=models.CASCADE, related_name="TextAnswers")
    test = models.ForeignKey(Test, on_delete=models.CASCADE, related_name='text_questions')
    answer = models.TextField()
 
    def __str__(self):
-      return 'Answer for {}. Answer - {}'.format(self.test, self.answer)
+      return '{}. Студенттің жауабы: - {}'.format(self.test, self.answer)
 
 
 
@@ -78,7 +68,7 @@ class AnswerTest6(models.Model):
    answer = models.IntegerField(blank=True)
 
    def __str__(self):
-      return 'Answer - {}'.format(self.answer)
+      return str(self.answer)
 
 
 class AnswerTest8(models.Model):
@@ -86,17 +76,49 @@ class AnswerTest8(models.Model):
    answer = models.IntegerField(blank=True)
 
    def __str__(self):
-      return 'Answer - {}'.format(self.answer)
+      return str(self.answer)
+
+
+
+class VariantRadio(models.Model):
+   text = models.CharField(max_length=200)
+   question = models.ForeignKey(QuestionRadio, on_delete=models.CASCADE, related_name='variants')
+   owner =  models.ManyToManyField(Student, related_name="answer_of_TEST4", blank=True)
+   correct_answer = models.CharField(max_length=200, blank=True)
+
+   def __str__(self):
+      return '{}. Студенттің жауабы - {}'.format(self.question, self.text)
 
 
 
 #              TEST 1
 class First_test_variants(models.Model):
-   test = models.ForeignKey(Test, on_delete=models.CASCADE, related_name='first_test_variants', blank=True)
-   variant = models.CharField(max_length=1)
-   owner = models.ManyToManyField(Student, related_name='first_test_answer', blank=True)
+   text = models.CharField(max_length=200)
+   question = models.ForeignKey(QuestionRadio, on_delete=models.CASCADE, related_name='first_test_variant')
+   owner =  models.ManyToManyField(Student, related_name="answer_of_TEST1", blank=True)
+   correct_answer = models.CharField(max_length=200, blank=True)
 
    def __str__(self):
-      return 'Variant of {}. Variant - {}'.format(self.test, self.variant)
+      return '{} {}'.format(self.question, self.text)
 
 
+
+class Third_test_variants(models.Model):
+   test = models.ForeignKey(Test, on_delete=models.CASCADE, related_name='third_test_variant')
+   text = models.CharField(max_length=200)
+   owner = models.ManyToManyField(Student, related_name="third_test_variant", blank=True)
+   correct_answer = models.CharField(max_length=200, blank=True)
+
+
+   def __str__(self):
+      return self.text
+
+
+class Seventh_test_variants(models.Model):
+   test = models.ForeignKey(Test, on_delete=models.CASCADE, related_name='seventh_test_variant')
+   text = models.CharField(max_length=200)
+   owner = models.ManyToManyField(Student, related_name="seventh_test_variant", blank=True)
+   correct_answer = models.CharField(max_length=200, blank=True)
+
+   def __str__(self):
+      return self.text
