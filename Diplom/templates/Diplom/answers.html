@@ -4,97 +4,269 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <title>Document</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/css/uikit.min.css" />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>
+   <title>Answers</title>
+   <style>
+      ul,
+      li {
+         margin: 0;
+         padding: 0;
+         list-style: none;
+      }
+
+      .wrapper {
+         max-width: 1250px;
+         margin: 30px auto 0;
+         padding: 0 30px;
+      }
+
+      .flex {
+         margin-bottom: 100px;
+         display: flex;
+         justify-content: space-between;
+      }
+
+      .answers-more {
+         width: 20%;
+      }
+
+      .answers-more li {
+         background: #F7F7F7;
+         padding: 10px 0 10px 10px;
+      }
+
+      .answers-more li.uk-active {
+         background: #EF9300;
+      }
+
+      .answers-more li.uk-active a {
+         color: #fff;
+         border: none;
+      }
+
+      .answers-box {
+         width: 77%
+      }
+
+      .groups-box {
+         border: 1px solid #E5E5E5;
+      }
+
+      .groups-item {
+         padding: 17px;
+         margin: 0 !important;
+         border-bottom: 1px solid #E5E5E5;
+      }
+
+      .groups-item:last-child {
+         border-bottom: none;
+      }
+
+      .groups-item.uk-open {
+         background: #F7F7F7;
+      }
+
+      .groups-item.uk-open > .uk-accordion-title {
+         color: #EF9300;
+      }
+      
+      .answers-item {
+         border-bottom: 1px solid #e0dbdb;
+         padding-bottom: 15px;
+      }
+
+      .answers-item,
+      .test-body {
+         box-sizing: border-box;
+         margin-left: 20px;
+      }
+
+      .answer-field {
+         padding-left: 10px;
+         padding-bottom: 20px;
+         padding-top: 20px;
+         border-bottom: 1px solid #e0dbdb;
+      }
+
+      .answer-field h4 {
+         font-size: 18px;
+      }
+
+      .answer-field:first-child {
+         padding-top: 0;
+      }
+
+      .answer-field:last-child {
+         border-bottom: none;
+      }
+
+      .test-flex {
+         display: flex;
+      }
+
+      .test-flex div:last-child {
+         margin-left: 15px;
+      }
+
+      /* Footer */
+      footer {
+         background: #EFEFEF;
+         position: fixed;
+         width: 100%;
+         box-sizing: border-box;
+         bottom: 0;
+         padding: 10px;
+         text-align: center;
+         flex: 0 0 auto;
+      }
+
+      footer p {
+         margin: 0;
+      }
+
+      footer a {
+         color: #EA9215;
+      }
+   </style>
 </head>
 <body>
-   {% for group in groups %}
-      {{ group }}
-      {% for student in group.students.all %}
-         <div style="padding-bottom: 100px; border: 1px solid black;"> 
-            <p>{{ student.full_name }}</p>
-            <p>
-               <h4>Test 1</h4>
-               {% for answer in student.answer_of_TEST1.all %}
-                  <ul>
-                     <li>{{ answer }}</li> - Правильный ответ {{ answer.correct_answer }}
-                  </ul>
-               {% empty %}
-                  Пока не ответил
-               {% endfor %}              
-            </p>
-            <p>
-               <h4>Test 2, 5</h4>
-               {% for answer in student.TextAnswers.all %}
-                  <ul>
-                     <li>{{ answer }}</li>
-                  </ul>
-               {% empty %}
-                  Пока не ответил
-               {% endfor %}            
-            </p>
-            <p>
-               <h4>Test 3</h4>
-               {% for answer in student.third_test_variant.all %}
-                  <ul>
-                     <li>{{ answer }}</li> - Правильный ответ: {{ answer.correct_answer }}
-                  </ul>
-               {% empty %}
-                  Пока не ответил
-               {% endfor %}              
-            </p>
-            <p>
-               <h4>Test 4</h4>
-               {% for answer in student.answer_of_TEST4.all %}
-                  <ul>
-                     <li>{{ answer }}</li> - Правильный ответ: {{ answer.correct_answer }}
-                  </ul>
-               {% empty %}
-                  Пока не ответил
-               {% endfor %}            
-            </p>
+   <div class="wrapper">
+      <h2>Личный кабинет</h2>
 
-            <p>
-               <h4>Test 6</h4>
-               <ol>
-                  {% for answer in student.Test6Answers.all %}
-                     <li>{{ answer }}</li>
-                  {% empty %}
-                     Пока не ответил
-                  {% endfor %} 
-               </ol> 
-               <ol>
-                  {% for question in test6.number_questions.all %}
-                        <li>Правильныq ответ: {{ question.correct_answer }}</li>
-                  {% endfor %}  
-               </ol>        
-            </p>
-            <p>
-               <h4>Test 7</h4>
-               {% for answer in student.seventh_test_variant.all %}
-                  <ul>
-                     <li>{{ answer }}</li> - Правильный ответ: {{ answer.correct_answer }}
-                  </ul>
-               {% empty %}
-                  Пока не ответил
-               {% endfor %}              
-            </p>
-            <p>
-               <h4>Test 8</h4>
-               <ol>
-                  {% for answer in student.Test8Answers.all %}
-                     <li>{{ answer }}</li>
-                  {% empty %}
-                     Пока не ответил
-                  {% endfor %}   
-               </ol>        
-               <ol>
-                  {% for question in test8.number_questions.all %}
-                        <li>Правильныq ответ: {{ question.correct_answer }}</li>
-                  {% endfor %}  
-               </ol>    
-            </p>
-         </div>
-      {% endfor %}
-   {% endfor %}
+      <div class="flex">
+         <ul class="uk-tab-left answers-more" data-uk-tab="{connect:'#my-id'}">
+            <li class="uk-active"><a href="">Ответы студентов</a></li>
+            <li><a href="">Вкладка</a></li>
+            <li><a href="">Вкладка</a></li>
+         </ul>
+         <ul id="my-id" class="uk-switcher answers-box" uk-margin">
+            <li>
+               <h3>Группы</h3>
+               <ul class="groups-box" uk-accordion>
+                  {% for group in groups %}
+                     <li class="groups-item">
+                        <a class="uk-accordion-title" href="#">{{ group }}</a>
+                        <div class="uk-accordion-content">
+                           <ul uk-accordion>
+                              {% for student in group.students.all %}
+                                 <li class="answers-item"> 
+                                    <a class="uk-accordion-title" href="#">{{ student.full_name }}</a>
+                                    <div class="answer-content uk-accordion-content">
+                                       <div class="answer-field">
+                                          <h4>Тест 1</h4>
+                                          <div class="test-body">
+                                             {% for answer in student.answer_of_TEST1.all %}
+                                                <ul>
+                                                   <li>{{ answer }} - <strong>Правильный ответ {{ answer.correct_answer }}</strong></li>
+                                                </ul>
+                                             {% empty %}
+                                                <p>Пока не ответил</p>
+                                             {% endfor %}
+                                          </div>
+                                       </div>
+                                       <div class="answer-field">
+                                          <h4>Тест 2, 5</h4>
+                                          <div class="test-body">
+                                             {% for answer in student.TextAnswers.all %}
+                                                <ul>
+                                                   <li>{{ answer }}</li>
+                                                </ul>
+                                             {% empty %}
+                                                <p>Пока не ответил</p>
+                                             {% endfor %}
+                                          </div>            
+                                       </div>
+                                       <div class="answer-field">
+                                          <h4>Тест 3</h4>
+                                          <div class="test-body">
+                                             {% for answer in student.third_test_variant.all %}
+                                                <p>{{ answer }}</p>
+                                                <p><strong>Правильный ответ: {{ answer.correct_answer }}</strong></p>
+                                             {% empty %}
+                                                <p>Пока не ответил</p>
+                                             {% endfor %}  
+                                          </div>            
+                                       </div>
+                                       <div class="answer-field">
+                                          <h4>Тест 4</h4>
+                                          <div class="test-body">
+                                             {% for answer in student.answer_of_TEST4.all %}
+                                                <ul>
+                                                   <li>{{ answer }} <strong>({{ answer.correct_answer }})</strong></li>
+                                                </ul>
+                                             {% empty %}
+                                                <p>Пока не ответил</p>
+                                             {% endfor %}  
+                                          </div>          
+                                       </div>
+                                       <div class="answer-field">
+                                          <h4>Тест 6</h4>
+                                          <div class="test-body test-flex">
+                                             <div>
+                                                {% for answer in student.Test6Answers.all %}
+                                                   <p>{{ answer }}</p>
+                                                {% empty %}
+                                                   <p>Пока не ответил</p>
+                                                {% endfor %}
+                                             </div>
+
+                                             <div>
+                                                {% for question in test6.number_questions.all %}
+                                                   <p><strong>- Правильный ответ: {{ question.correct_answer }}</strong></p>
+                                                {% endfor %}
+                                             </div>
+                                          </div>      
+                                       </div>
+                                       <div class="answer-field">
+                                          <h4>Тест 7</h4>
+                                          <div class="test-body">
+                                             {% for answer in student.seventh_test_variant.all %}
+                                                <p>{{ answer }}</p>
+                                                <p><strong>Правильный ответ: {{ answer.correct_answer }}</strong></p>
+                                             {% empty %}
+                                                <p>Пока не ответил</p>
+                                             {% endfor %}  
+                                          </div>            
+                                       </div>
+                                       <div class="answer-field">
+                                          <h4>Тест 8</h4>
+                                          <div class="test-body test-flex">
+                                             <div>
+                                                {% for answer in student.Test8Answers.all %}
+                                                   <p>{{ answer }}</p>
+                                                {% empty %}
+                                                   <p>Пока не ответил</p>
+                                                {% endfor %}
+                                             </div>
+                                             <div>
+                                                {% for question in test8.number_questions.all %}
+                                                   <p><strong>- Правильныq ответ: {{ question.correct_answer }}</strong></p>
+                                                {% endfor %}
+                                             </div>
+                                          </div>    
+                                       </div>
+                                    </div>
+                                 </li>
+                              {% endfor %}
+                           </ul>
+                        </div>
+                     </li>
+                  {% endfor %}
+               </ul>
+            </li>
+         </ul>
+      </div>
+   </div>
+
+   <footer>
+      <div class="container">
+         <p>
+            <small class="block">&copy; Sfec</small>
+            <small class="block">Designed by <a href="" target="_blank">Medet</a> Sfec </a></small>
+         </p>
+      </div>
+   </footer>
 </body>
 </html>
