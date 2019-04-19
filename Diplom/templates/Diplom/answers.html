@@ -9,11 +9,9 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>
    <title>Answers</title>
    <style>
-      ul,
-      li {
+      ol {
          margin: 0;
-         padding: 0;
-         list-style: none;
+         padding-left: 17px;
       }
 
       .wrapper {
@@ -77,8 +75,7 @@
          padding-bottom: 15px;
       }
 
-      .answers-item,
-      .test-body {
+      .answers-item {
          box-sizing: border-box;
          margin-left: 20px;
       }
@@ -157,25 +154,25 @@
                                        <div class="answer-field">
                                           <h4>Тест 1</h4>
                                           <div class="test-body">
-                                             {% for answer in student.answer_of_TEST1.all %}
-                                                <ul>
-                                                   <li>{{ answer }} - <strong>Правильный ответ {{ answer.correct_answer }}</strong></li>
-                                                </ul>
-                                             {% empty %}
-                                                <p>Пока не ответил</p>
-                                             {% endfor %}
+                                             <div>
+                                                {% for answer in student.answer_of_TEST1.all %}
+                                                   <p>{{ answer }} - <strong>Правильный ответ {{ answer.correct_answer }}</strong></p>
+                                                {% empty %}
+                                                   <p>Пока не ответил</p>
+                                                {% endfor %}
+                                             </div>
                                           </div>
                                        </div>
                                        <div class="answer-field">
                                           <h4>Тест 2, 5</h4>
                                           <div class="test-body">
-                                             {% for answer in student.TextAnswers.all %}
-                                                <ul>
-                                                   <li>{{ answer }}</li>
-                                                </ul>
-                                             {% empty %}
-                                                <p>Пока не ответил</p>
-                                             {% endfor %}
+                                             <div>
+                                                {% for answer in student.TextAnswers.all %}
+                                                   <p>{{ answer }}</p>
+                                                {% empty %}
+                                                   <p>Пока не ответил</p>
+                                                {% endfor %}
+                                             </div>
                                           </div>            
                                        </div>
                                        <div class="answer-field">
@@ -192,25 +189,25 @@
                                        <div class="answer-field">
                                           <h4>Тест 4</h4>
                                           <div class="test-body">
-                                             {% for answer in student.answer_of_TEST4.all %}
-                                                <ul>
-                                                   <li>{{ answer }} <strong>({{ answer.correct_answer }})</strong></li>
-                                                </ul>
-                                             {% empty %}
-                                                <p>Пока не ответил</p>
-                                             {% endfor %}  
+                                             <div>
+                                                {% for answer in student.answer_of_TEST4.all %}
+                                                   <p>{{ answer }} <strong>({{ answer.correct_answer }})</strong></p>
+                                                {% empty %}
+                                                   <p>Пока не ответил</p>
+                                                {% endfor %}  
+                                             </div>
                                           </div>          
                                        </div>
                                        <div class="answer-field">
                                           <h4>Тест 6</h4>
                                           <div class="test-body test-flex">
-                                             <div>
+                                             <ol>
                                                 {% for answer in student.Test6Answers.all %}
-                                                   <p>{{ answer }}</p>
+                                                   <li><p>{{ answer }}</p></li>
                                                 {% empty %}
                                                    <p>Пока не ответил</p>
                                                 {% endfor %}
-                                             </div>
+                                             </ol>
 
                                              <div>
                                                 {% for question in test6.number_questions.all %}
@@ -233,13 +230,13 @@
                                        <div class="answer-field">
                                           <h4>Тест 8</h4>
                                           <div class="test-body test-flex">
-                                             <div>
+                                             <ol>
                                                 {% for answer in student.Test8Answers.all %}
-                                                   <p>{{ answer }}</p>
+                                                   <li><p>{{ answer }}</p></li>
                                                 {% empty %}
                                                    <p>Пока не ответил</p>
                                                 {% endfor %}
-                                             </div>
+                                             </ol>
                                              <div>
                                                 {% for question in test8.number_questions.all %}
                                                    <p><strong>- Правильныq ответ: {{ question.correct_answer }}</strong></p>
