@@ -16,7 +16,7 @@ from django.contrib import messages
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 
-
+from django.utils.translation import gettext as _
 
 def home(request):
    return render(request, 'Diplom/home.html')
@@ -50,6 +50,15 @@ def students(request, slug):
 
 
 def test(request):
+   # from django.utils import translation
+   # # user_language = 'kk'
+   # # translation.activate(user_language)
+   # # request.session[translation.LANGUAGE_SESSION_KEY] = user_language
+
+   # if translation .LANGUAGE_SESSION_KEY in request.session:
+   #    del request.session[translation.LANGUAGE_SESSION_KEY]
+
+
    test1 = Test.objects.get(number=1)
    test2 = Test.objects.get(number=2)
    test3 = Test.objects.get(number=3)
@@ -114,15 +123,16 @@ def test(request):
          messages.error(request, f'Сіз барлық сұрақтарға жауап берген жоқсыз')
          return redirect('test_url')
 
+
+   title = _('Сынақ парақшасы')
    return render(request, 'Diplom/test.html', context={
       'test1': test1,
-      'test2': test2,
       'test3': test3,
       'test4': test4,
-      'test5': test5,
       'test6': test6,
       'test7': test7,
-      'test8': test8
+      'test8': test8,
+      'title': title,
    })
    
 

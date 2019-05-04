@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{{ title }}{% endblock title %}
 {% block content %}
    <div class="test-wrapper">
 		<div class="test-title-top">
@@ -10,9 +12,7 @@
 
 			<div class="test-title-top-text">
 				<p>
-					ШҚО Білім басқармасы 
-					«Р.С. Байсеитов атындағы Семей қаржы экономикалық
-					Колледжі» КМҚК						
+               {% trans "ШҚО Білім басқармасы «Р.С. Байсеитов атындағы Семей қаржы экономикалық Колледжі» КМҚК	" %}					
 				</p>
 			</div>
 		</div>
@@ -22,14 +22,27 @@
 		<div class="test-wrapper">
 			<div class="test-title">
 				<h1>
-					Кіріспе психологиялық-
-					педагогикалық диагностика
-					бойынша тесттер		
-				</h1>
+               {% trans "Кіріспе психологиялық - педагогикалық диагностика бойынша тесттер" %}	
+            </h1>
+            {% get_current_language as LANGUAGE_CODE %}
+            <form action="{% url 'set_language' %}" method="POST">
+               {% csrf_token %}
+               <input type="hidden" name="next" value="{{ redirect_to }}">
+               <select name="language">
+                  {% get_available_languages as LANGUAGES %}
+                  {% get_language_info_list for LANGUAGES as languages %}
+                  {% for language in languages %}
+                     <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected {% endif %}>
+                        {{ language.name_local }} ({{ language.code }})
+                     </option>
+                  {% endfor %}
+               </select>
+               <input type="submit" value="GO">
+            </form>
 			</div>
 
 			<div class="test-cord">
-				<p>Семей қаласы.</p>
+				<p>{% trans "Семей қаласы" %}</p>
 			</div>
 		</div>
    </div>
@@ -48,7 +61,7 @@
             
             <div class="test-box">
                <div class="test-box-item it-1">
-                  <p class="test-item-question">{{ test1 }}</p>
+                  <p class="test-item-question">Тест 1. {% trans "Кеңістіктікті елестету қабілеті" %}</p>
                   <!-- <div class="label-box">
                      {% for variant in test1.first_test_variants.all %}
                         <label>
@@ -78,12 +91,12 @@
                </div>
 
                <div class="test-box-item it-2">
-                  <p class="test-item-question">{{ test2 }}</p>
+                  <p class="test-item-question">Тест 2. {% trans "Еске сақтау қабілеті (Оқытушымен баяндалады. Қосымша 1)" %}</p>
                      <textarea class="remember-field" placeholder="Мәтінді енгізініз" name="T2"></textarea>
                </div>
 
                <div class="test-box-item it-3">
-                  <p class="test-item-question">{{ test3 }}</p>
+                  <p class="test-item-question">Тест 3. {% trans "Көргенді есте сақтау" %}</p>
 
                   <button id="it-3-btn" type="button">Таймер</button>
 
@@ -112,7 +125,7 @@
                </div>
 
                <div class="test-box-item it-4">
-                  <p class="test-item-question">{{ test4 }}</p>
+                  <p class="test-item-question">Тест 4. {% trans "Логикалық ойлау" %}</p>
                   {% for question in test4.questions.all %}
                      <p>{{ question.text }}<br> {{ question.hint }} - 
                         {% for variant in question.variants.all  %}
@@ -126,12 +139,12 @@
                </div>
 
                <div class="test-box-item it-5">
-                  <p class="test-item-question">{{ test5 }}</p>
+                  <p class="test-item-question">Тест 5. {% trans "Сөздік қор (Оқытушымен баяндалады)" %}</p>
                   <textarea class="remember-field" placeholder="Мәтінді енгізініз" name="T5"></textarea>
                </div>
 
                <div class="test-box-item it-6">
-                  <p class="test-item-question">{{ test6 }}</p>
+                  <p class="test-item-question">Тест 6. {% trans "Математиқалық ойлау" %}</p>
                   <div class="test-numbers">
                      <div>
                         {% for question in test6.number_questions.all %}
@@ -144,7 +157,7 @@
                </div>
 
                <div class="test-box-item it-7">
-                  <p class="test-item-question">{{ test7 }}</p>
+                  <p class="test-item-question">Тест 7. {% trans "Көзбен өлшеу" %}</p>
                   <div class="test-item-img">
                      <img src="/media/images/testing-3.png" alt="testing">
                   </div>
@@ -162,7 +175,7 @@
                </div>
 
                <div class="test-box-item it-8">
-                  <p class="test-item-question">{{ test8 }}</p>
+                  <p class="test-item-question">Тест 8. {% trans "Есептегіштік қабілеттері" %}</p>
                   <div class="test-numbers">
                      <div>
                         {% for question in test8.number_questions.all %}
@@ -176,7 +189,7 @@
             </div>
 
             <div class="send-btn-box">
-               <button class="send-btn" type="submit">Тестты аяқтау</button>
+               <button class="send-btn" type="submit">Тестті аяқтау</button>
             </div>
          </form>
       </div>

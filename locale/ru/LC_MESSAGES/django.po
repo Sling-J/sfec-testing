@@ -1,0 +1,77 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-04 20:38+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\Diplom\templates\Diplom\test.html:15
+msgid ""
+"ШҚО Білім басқармасы «Р.С. Байсеитов атындағы Семей қаржы экономикалық "
+"Колледжі» КМҚК\t"
+msgstr ""
+"Министерство образования Восточно-Казахстанской области финансово-"
+"экономический колледж г.Семей им.Байсеитова"
+
+#: .\Diplom\templates\Diplom\test.html:25
+msgid "Кіріспе психологиялық - педагогикалық диагностика бойынша тесттер"
+msgstr "Психолого-педагогические диагностические тесты"
+
+#: .\Diplom\templates\Diplom\test.html:27
+msgid "Мен казакпын"
+msgstr "Я казах"
+
+#: .\Diplom\templates\Diplom\test.html:47
+msgid "Семей қаласы"
+msgstr "г.Семей"
+
+#: .\Diplom\templates\Diplom\test.html:66
+msgid "Кеңістіктікті елестету қабілеті"
+msgstr "Умение представлять пространство"
+
+#: .\Diplom\templates\Diplom\test.html:96
+msgid "Еске сақтау қабілеті (Оқытушымен баяндалады. Қосымша 1)"
+msgstr "Способность запоминания (Описывается учителем. Дополнительно 1)"
+
+#: .\Diplom\templates\Diplom\test.html:101
+msgid "Көргенді есте сақтау"
+msgstr "Зрительный память"
+
+#: .\Diplom\templates\Diplom\test.html:130
+msgid "Логикалық ойлау"
+msgstr "Логическое мышление"
+
+#: .\Diplom\templates\Diplom\test.html:144
+msgid "Сөздік қор (Оқытушымен баяндалады)"
+msgstr "Словарный запас (Описывается учителем)"
+
+#: .\Diplom\templates\Diplom\test.html:149
+msgid "Математиқалық ойлау"
+msgstr "Математическое мышление"
+
+#: .\Diplom\templates\Diplom\test.html:162
+msgid "Көзбен өлшеу"
+msgstr "Визуальное измерение"
+
+#: .\Diplom\templates\Diplom\test.html:180
+msgid "Есептегіштік қабілеттері"
+msgstr "Вычеслительные способности"
+
+#: .\Diplom\views.py:127
+msgid "Сынақ парақшасы"
+msgstr "Страница тестирования"
