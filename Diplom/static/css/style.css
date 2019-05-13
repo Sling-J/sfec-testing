@@ -1343,3 +1343,27 @@ input[type="radio"] {
    vertical-align: middle;
    margin-bottom: 5px;
 }
+
+.language-form {
+	color: #000;
+}
+
+.language-form select {
+	width: 30%;
+	outline: none;
+	padding: 6px;
+}
+
+.language-form input[type="submit"] {
+	transition: all 0.3s;
+	background: #629BF7;
+	color: #fff;
+	padding: 6px 6px 5px;
+	margin-left: -5px;
+	border: none;
+	outline: none;
+}
+
+.language-form input[type="submit"]:hover {
+	background: #487FD6;	
+}

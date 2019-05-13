@@ -25,7 +25,7 @@
                {% trans "Кіріспе психологиялық - педагогикалық диагностика бойынша тесттер" %}	
             </h1>
             {% get_current_language as LANGUAGE_CODE %}
-            <form action="{% url 'set_language' %}" method="POST">
+            <form class="language-form" action="{% url 'set_language' %}" method="POST">
                {% csrf_token %}
                <input type="hidden" name="next" value="{{ redirect_to }}">
                <select name="language">
