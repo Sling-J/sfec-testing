@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-04 20:38+0600\n"
+"POT-Creation-Date: 2019-05-21 12:20+0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,56 +22,61 @@ msgstr ""
 
 #: .\Diplom\templates\Diplom\test.html:15
 msgid ""
-"ШҚО Білім басқармасы «Р.С. Байсеитов атындағы Семей қаржы экономикалық "
-"Колледжі» КМҚК\t"
+"SFEK - Рымбек Байсеитов атындағы Семей қаржы-экономикалық колледжі - СФЭК"
 msgstr ""
-"Министерство образования Восточно-Казахстанской области финансово-"
-"экономический колледж г.Семей им.Байсеитова"
+"Семипалатинский финансово-экономический колледж имени Рымбека Байсеитова"
 
 #: .\Diplom\templates\Diplom\test.html:25
 msgid "Кіріспе психологиялық - педагогикалық диагностика бойынша тесттер"
 msgstr "Психолого-педагогические диагностические тесты"
 
-#: .\Diplom\templates\Diplom\test.html:27
-msgid "Мен казакпын"
-msgstr "Я казах"
-
-#: .\Diplom\templates\Diplom\test.html:47
+#: .\Diplom\templates\Diplom\test.html:45
 msgid "Семей қаласы"
 msgstr "г.Семей"
 
-#: .\Diplom\templates\Diplom\test.html:66
+#: .\Diplom\templates\Diplom\test.html:64
 msgid "Кеңістіктікті елестету қабілеті"
 msgstr "Умение представлять пространство"
 
-#: .\Diplom\templates\Diplom\test.html:96
+#: .\Diplom\templates\Diplom\test.html:94
 msgid "Еске сақтау қабілеті (Оқытушымен баяндалады. Қосымша 1)"
 msgstr "Способность запоминания (Описывается учителем. Дополнительно 1)"
 
-#: .\Diplom\templates\Diplom\test.html:101
+#: .\Diplom\templates\Diplom\test.html:99
 msgid "Көргенді есте сақтау"
 msgstr "Зрительный память"
 
-#: .\Diplom\templates\Diplom\test.html:130
+#: .\Diplom\templates\Diplom\test.html:128
 msgid "Логикалық ойлау"
 msgstr "Логическое мышление"
 
-#: .\Diplom\templates\Diplom\test.html:144
+#: .\Diplom\templates\Diplom\test.html:142
 msgid "Сөздік қор (Оқытушымен баяндалады)"
 msgstr "Словарный запас (Описывается учителем)"
 
-#: .\Diplom\templates\Diplom\test.html:149
+#: .\Diplom\templates\Diplom\test.html:147
 msgid "Математиқалық ойлау"
 msgstr "Математическое мышление"
 
-#: .\Diplom\templates\Diplom\test.html:162
+#: .\Diplom\templates\Diplom\test.html:160
 msgid "Көзбен өлшеу"
 msgstr "Визуальное измерение"
 
-#: .\Diplom\templates\Diplom\test.html:180
+#: .\Diplom\templates\Diplom\test.html:178
 msgid "Есептегіштік қабілеттері"
 msgstr "Вычеслительные способности"
 
-#: .\Diplom\views.py:127
+#: .\Diplom\templates\Diplom\test.html:192
+msgid "Тестті аяқтау"
+msgstr "Закончить тест"
+
+#: .\Diplom\views.py:120
+msgid "Сіз барлық сұрақтарға жауап берген жоқсыз"
+msgstr "Вы не ответили на все вопросы"
+
+#: .\Diplom\views.py:128
 msgid "Сынақ парақшасы"
 msgstr "Страница тестирования"
+
+#~ msgid "Мен казакпын"
+#~ msgstr "Я казах"

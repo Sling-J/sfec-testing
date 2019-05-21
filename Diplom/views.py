@@ -120,7 +120,8 @@ def test(request):
          messages.success(request, f'Сіз сынақты сәтті өткіздіңіз!')
          return redirect('home_url')
       except:
-         messages.error(request, f'Сіз барлық сұрақтарға жауап берген жоқсыз')
+         error_message = _('Сіз барлық сұрақтарға жауап берген жоқсыз')
+         messages.error(request, f'{error_message}')
          return redirect('test_url')
 
 
