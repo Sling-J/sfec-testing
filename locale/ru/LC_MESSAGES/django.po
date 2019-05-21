@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-21 12:20+0600\n"
+"POT-Creation-Date: 2019-05-22 01:48+0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,38 +39,208 @@ msgid "Кеңістіктікті елестету қабілеті"
 msgstr "Умение представлять пространство"
 
 #: .\Diplom\templates\Diplom\test.html:94
-msgid "Еске сақтау қабілеті (Оқытушымен баяндалады. Қосымша 1)"
-msgstr "Способность запоминания (Описывается учителем. Дополнительно 1)"
+msgid "Еске сақтау қабілеті"
+msgstr "Способность запоминания"
+
+#: .\Diplom\templates\Diplom\test.html:97
+msgid "Торт"
+msgstr "Торт"
+
+#: .\Diplom\templates\Diplom\test.html:98
+msgid "Уақыт"
+msgstr "Время"
 
 #: .\Diplom\templates\Diplom\test.html:99
+msgid "Жидек"
+msgstr "Ягода"
+
+#: .\Diplom\templates\Diplom\test.html:100
+msgid "Лампочка"
+msgstr "Лампочка"
+
+#: .\Diplom\templates\Diplom\test.html:101
+msgid "Ой"
+msgstr "Мысль"
+
+#: .\Diplom\templates\Diplom\test.html:102
+msgid "Үстел"
+msgstr "Стол"
+
+#: .\Diplom\templates\Diplom\test.html:103
+msgid "Жер"
+msgstr "Земля"
+
+#: .\Diplom\templates\Diplom\test.html:104
+msgid "Қанат"
+msgstr "Крыло"
+
+#: .\Diplom\templates\Diplom\test.html:105
+msgid "Галстук"
+msgstr "Галстук"
+
+#: .\Diplom\templates\Diplom\test.html:106
+msgid "Картошка"
+msgstr "Картошка"
+
+#: .\Diplom\templates\Diplom\test.html:109
+msgid "Піл"
+msgstr "Слон"
+
+#: .\Diplom\templates\Diplom\test.html:110
+msgid "Роза"
+msgstr "Роза"
+
+#: .\Diplom\templates\Diplom\test.html:111
+msgid "Есту"
+msgstr "Слух"
+
+#: .\Diplom\templates\Diplom\test.html:112
+msgid "Шәшке"
+msgstr "Чашка"
+
+#: .\Diplom\templates\Diplom\test.html:113
+msgid "Ай"
+msgstr "Луна"
+
+#: .\Diplom\templates\Diplom\test.html:114
+msgid "Бор"
+msgstr "Мел"
+
+#: .\Diplom\templates\Diplom\test.html:115
+msgid "Ауа"
+msgstr "Воздух"
+
+#: .\Diplom\templates\Diplom\test.html:116
+msgid "Обой"
+msgstr "Обои"
+
+#: .\Diplom\templates\Diplom\test.html:117
+msgid "Қар"
+msgstr "Снег"
+
+#: .\Diplom\templates\Diplom\test.html:118
+msgid "Футболка"
+msgstr "Футболка"
+
+#: .\Diplom\templates\Diplom\test.html:121
+msgid "Сөз"
+msgstr "Слово"
+
+#: .\Diplom\templates\Diplom\test.html:122
+msgid "Плащ"
+msgstr "Плащ"
+
+#: .\Diplom\templates\Diplom\test.html:123
+msgid "Тормоз"
+msgstr "Тормоз"
+
+#: .\Diplom\templates\Diplom\test.html:124
+msgid "Үй"
+msgstr "Дом"
+
+#: .\Diplom\templates\Diplom\test.html:125
+msgid "Журнал"
+msgstr "Журнал"
+
+#: .\Diplom\templates\Diplom\test.html:126
+msgid "Ұшақ"
+msgstr "Самолет"
+
+#: .\Diplom\templates\Diplom\test.html:127
+msgid "Шие"
+msgstr "Вишня"
+
+#: .\Diplom\templates\Diplom\test.html:128
+msgid "Сан"
+msgstr "Число"
+
+#: .\Diplom\templates\Diplom\test.html:129
+msgid "Сағат"
+msgstr "Часы"
+
+#: .\Diplom\templates\Diplom\test.html:130
+msgid "Ет"
+msgstr "Мясо"
+
+#: .\Diplom\templates\Diplom\test.html:133
+msgid "Шәй"
+msgstr "Чай"
+
+#: .\Diplom\templates\Diplom\test.html:134
+msgid "Түн"
+msgstr "Ночь"
+
+#: .\Diplom\templates\Diplom\test.html:135
+msgid "Бұтақ"
+msgstr "Ветка"
+
+#: .\Diplom\templates\Diplom\test.html:136
+msgid "Парта"
+msgstr "Парта"
+
+#: .\Diplom\templates\Diplom\test.html:137
+msgid "Ғаламшар"
+msgstr "Космос"
+
+#: .\Diplom\templates\Diplom\test.html:138
+msgid "Сөре"
+msgstr "Полка"
+
+#: .\Diplom\templates\Diplom\test.html:139
+msgid "Танқурай"
+msgstr "Малина"
+
+#: .\Diplom\templates\Diplom\test.html:140
+msgid "Дөңгелек"
+msgstr "Колесо"
+
+#: .\Diplom\templates\Diplom\test.html:141
+msgid "Бас киім"
+msgstr "Шапка"
+
+#: .\Diplom\templates\Diplom\test.html:142
+msgid "Музыка"
+msgstr "Музыка"
+
+#: .\Diplom\templates\Diplom\test.html:148
+msgid ""
+"Бағалау мөлшері: 1 бал - 16 сөз; 2 балл - 17 - 19; 3 балл - 22 - 24; 5 балл "
+"- 25; 6 балл - 26 - 28; 7 балл - 29 - 30; 8 балл - 31 - 32; 9 балл - 33 - "
+"34; 10 балл - 35 сөз және одан да көп"
+msgstr ""
+"Шкала оценок: 1 балл - 16 слов; 2 балла - 17 - 19; 3 балла - 22 - 24; 5 "
+"баллов - 25; 6 баллов - 26 - 28; 7 баллов - 29 - 30; 8 баллов - 31 - 32; 9 "
+"баллов - 33 - 34; 10 баллов - 35 слов и больше."
+
+#: .\Diplom\templates\Diplom\test.html:153
 msgid "Көргенді есте сақтау"
 msgstr "Зрительный память"
 
-#: .\Diplom\templates\Diplom\test.html:128
+#: .\Diplom\templates\Diplom\test.html:182
 msgid "Логикалық ойлау"
 msgstr "Логическое мышление"
 
-#: .\Diplom\templates\Diplom\test.html:142
-msgid "Сөздік қор (Оқытушымен баяндалады)"
-msgstr "Словарный запас (Описывается учителем)"
+#: .\Diplom\templates\Diplom\test.html:196
+msgid "Әріп тіркесін атау:П-Р"
+msgstr "Назвать буквосочетание: П –Р"
 
-#: .\Diplom\templates\Diplom\test.html:147
+#: .\Diplom\templates\Diplom\test.html:201
 msgid "Математиқалық ойлау"
 msgstr "Математическое мышление"
 
-#: .\Diplom\templates\Diplom\test.html:160
+#: .\Diplom\templates\Diplom\test.html:214
 msgid "Көзбен өлшеу"
 msgstr "Визуальное измерение"
 
-#: .\Diplom\templates\Diplom\test.html:178
+#: .\Diplom\templates\Diplom\test.html:232
 msgid "Есептегіштік қабілеттері"
 msgstr "Вычеслительные способности"
 
-#: .\Diplom\templates\Diplom\test.html:192
+#: .\Diplom\templates\Diplom\test.html:246
 msgid "Тестті аяқтау"
 msgstr "Закончить тест"
 
-#: .\Diplom\views.py:120
+#: .\Diplom\views.py:123
 msgid "Сіз барлық сұрақтарға жауап берген жоқсыз"
 msgstr "Вы не ответили на все вопросы"
 

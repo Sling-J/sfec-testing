@@ -1367,3 +1367,14 @@ input[type="radio"] {
 .language-form input[type="submit"]:hover {
 	background: #487FD6;	
 }
+
+
+.test_2 {
+	display: flex;
+	padding-bottom: 10px;
+}
+
+.test_2_item {
+	border: 1px solid black;
+	padding: 0 35px;
+}
