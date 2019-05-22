@@ -118,6 +118,117 @@
       }, 60000)
    });
 
+   $('#it-2-btn').click(function() {
+      const textArea = $('#test-2-textarea');
+      const testItem1 = $('.test_2_item-1');
+      const counter = $('.it-2-timer');
+      const duration = 800;
+      let str = 45;
+      $(this).prop('disabled', 'true');
+      counter.html(str + ' сек');
+      testItem1.fadeIn();
+      counter.fadeIn(duration);
+      
+
+      const timer = setInterval(() => counter.html((str--) - 1 + ' сек'), 1000);
+
+      setTimeout(() => {
+         clearInterval(timer);
+         textArea.fadeIn(duration);
+         testItem1.hide();
+         counter.hide();
+      }, 45000)
+
+      setTimeout(() => {
+         textArea.hide(duration);
+         $(this).hide();
+         $('#it-2-btn-2').show();
+      }, 90000)
+   })
+
+   $('#it-2-btn-2').click(function() {
+      const textArea = $('#test-2-textarea');
+      const testItem1 = $('.test_2_item-2');
+      const counter = $('.it-2-timer');
+      const duration = 800;
+      let str = 45;
+      $(this).prop('disabled', 'true');
+
+      counter.html(str + ' сек');
+      testItem1.fadeIn();
+      counter.fadeIn(duration);
+
+      const timer = setInterval(() => counter.html((str--) - 1 + ' сек'), 1000);
+
+      setTimeout(() => {
+         clearInterval(timer);
+         textArea.fadeIn(duration);
+         testItem1.hide();
+         counter.hide();
+      }, 45000)
+
+      setTimeout(() => {
+         textArea.hide(duration);
+         $(this).hide();
+         $('#it-2-btn-3').show();
+      }, 90000)
+   })
+
+   $('#it-2-btn-3').click(function() {
+      const textArea = $('#test-2-textarea');
+      const testItem1 = $('.test_2_item-3');
+      const counter = $('.it-2-timer');
+      const duration = 800;
+      let str = 45;
+      $(this).prop('disabled', 'true');
+
+      counter.html(str + ' сек');
+      testItem1.fadeIn();
+      counter.fadeIn(duration);
+
+      const timer = setInterval(() => counter.html((str--) - 1 + ' сек'), 1000);
+
+      setTimeout(() => {
+         clearInterval(timer);
+         textArea.fadeIn(duration);
+         testItem1.hide();
+         counter.hide();
+      }, 45000)
+
+      setTimeout(() => {
+         textArea.hide(duration);
+         $(this).hide();
+         $('#it-2-btn-4').show();
+      }, 90000)
+   })
+
+   $('#it-2-btn-4').click(function() {
+      const textArea = $('#test-2-textarea');
+      const testItem1 = $('.test_2_item-4');
+      const counter = $('.it-2-timer');
+      const duration = 800;
+      let str = 45;
+      $(this).prop('disabled', 'true');
+
+      counter.html(str + ' сек');
+      testItem1.fadeIn();
+      counter.fadeIn(duration);
+
+      const timer = setInterval(() => counter.html((str--) - 1 + ' сек'), 1000);
+
+      setTimeout(() => {
+         clearInterval(timer);
+         textArea.fadeIn(duration);
+         testItem1.hide();
+         counter.hide();
+      }, 45000)
+
+      setTimeout(() => {
+         textArea.hide(duration);
+         $(this).hide();
+      }, 90000)
+   })
+
    $(function () {
       contentWayPoint();
       goToTop();
