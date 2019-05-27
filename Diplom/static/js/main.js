@@ -122,6 +122,20 @@
       const textArea = $('#test-2-textarea');
       const testItem1 = $('.test_2_item-1');
       const counter = $('.it-2-timer');
+      const audio = $('.test_2_item-1 audio')[0];
+      const btnPlay = $('.test_2_item-1 .audio-btn-play');
+      const btnStop = $('.test_2_item-1 .audio-btn-stop');
+      btnPlay.click(function() {
+         audio.currentTime = 0;
+         audio.play();
+         console.log(this)
+      })
+
+      btnStop.click(function() {
+         audio.currentTime = 0;
+         audio.pause();
+         console.log(this)
+      })
       const duration = 800;
       let str = 45;
       $(this).prop('disabled', 'true');
@@ -151,6 +165,20 @@
       const testItem1 = $('.test_2_item-2');
       const counter = $('.it-2-timer');
       const duration = 800;
+      const audio = $('.test_2_item-2 audio')[0];
+      const btnPlay = $('.test_2_item-2 .audio-btn-play');
+      const btnStop = $('.test_2_item-2 .audio-btn-stop');
+      btnPlay.click(function() {
+         audio.currentTime = 0;
+         audio.play();
+         console.log(this)
+      })
+
+      btnStop.click(function() {
+         audio.currentTime = 0;
+         audio.pause();
+         console.log(this)
+      })
       let str = 45;
       $(this).prop('disabled', 'true');
 
@@ -179,6 +207,20 @@
       const testItem1 = $('.test_2_item-3');
       const counter = $('.it-2-timer');
       const duration = 800;
+      const audio = $('.test_2_item-3 audio')[0];
+      const btnPlay = $('.test_2_item-3 .audio-btn-play');
+      const btnStop = $('.test_2_item-3 .audio-btn-stop');
+      btnPlay.click(function() {
+         audio.currentTime = 0;
+         audio.play();
+         console.log(this)
+      })
+
+      btnStop.click(function() {
+         audio.currentTime = 0;
+         audio.pause();
+         console.log(this)
+      })
       let str = 45;
       $(this).prop('disabled', 'true');
 
@@ -207,6 +249,20 @@
       const testItem1 = $('.test_2_item-4');
       const counter = $('.it-2-timer');
       const duration = 800;
+      const audio = $('.test_2_item-4 audio')[0];
+      const btnPlay = $('.test_2_item-4 .audio-btn-play');
+      const btnStop = $('.test_2_item-4 .audio-btn-stop');
+      btnPlay.click(function() {
+         audio.currentTime = 0;
+         audio.play();
+         console.log(this)
+      })
+
+      btnStop.click(function() {
+         audio.currentTime = 0;
+         audio.pause();
+         console.log(this)
+      })
       let str = 45;
       $(this).prop('disabled', 'true');
 

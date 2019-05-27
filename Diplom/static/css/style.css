@@ -1386,7 +1386,31 @@ input[type="radio"] {
 }
 
 .test_2_item {
-	border: 1px solid black;
 	display: none;
 	text-align: center;
+}
+
+.audio-btn-play,
+.audio-btn-stop {
+   background: none;
+   outline: none;
+   border: none;
+   font-size: 35px;
+   transition: all 0.3s;
+}
+
+.audio-btn-play {
+   color: #629BF7;
+}
+
+.audio-btn-play:hover {
+   color: #4278CE;
+}
+
+.audio-btn-stop {
+   color: tomato;
+}
+
+.audio-btn-stop:hover {
+   color: red;
 }
